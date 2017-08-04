@@ -7,8 +7,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Header
-        leftComponent={{ icon: 'menu', color: '#fff' }}
-        centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }} 
+        centerComponent={{ text: '투두 List', style: { color: '#fff', fontSize : 25 } }} 
         rightComponent={{ icon: 'home', color: '#fff' }}
         outerContainerStyles={{ backgroundColor: '#3D6DCC' }}
       />
