@@ -1,77 +1,68 @@
 import React from 'react';
 
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
+
 import { Header } from 'react-native-elements';
-import { List, ListItem } from 'react-native-elements'
+import { List } from 'react-native-elements'
+import { ListItem } from 'react-native-elements'
+import { Button } from 'react-native-elements'
 
 export default class App extends React.Component {
   render() {
 
 const list = [
   {
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title1'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title2'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title3'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    title : 'title4'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title5'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title6'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    title : 'title7'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title8'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
-  },{
-    name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
-    subtitle: 'Vice President'
+    title : 'title9'
+    , contents : 'contents '
+    , checked : false
   }, {
-    name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-    subtitle: 'Vice Chairman'
+    title : 'title10'
+    , contents : 'contents '
+    , checked : false
+  }, {
+    title : 'title11'
+    , contents : 'contents '
+    , checked : false
+  }, {
+    title : 'title12'
+    , contents : 'contents '
+    , checked : false
+  }, {
+    title : 'title13'
+    , contents : 'contents '
+    , checked : false
   }
 ];
 
@@ -79,17 +70,16 @@ const list = [
       <View>
         <Header style={{height:50, backgroundColor: '#3D6DCC'}}
           centerComponent={{ text: '투두 List', style: { color: '#fff', fontSize : 25 } }} 
-          rightComponent={{ icon: 'home', color: '#fff' }}
+          rightComponent={<Button title='Add' onPress={()=>alert('asd')}/>}
         />
         <ScrollView>
           <List containerStyle={{marginBottom: 20}}>
             {
               list.map((l, i) => (
                 <ListItem
-                  roundAvatar
-                  avatar={{uri:l.avatar_url}}
                   key={i}
-                  title={l.name}
+                  title={l.title}
+                  onPress={()=>alert(l.title)}
                 />
               ))
             }
