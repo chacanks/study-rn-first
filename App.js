@@ -2,10 +2,14 @@ import React from 'react';
 
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
-import { Header } from 'react-native-elements';
+import { Header } from 'react-native-elements'
 import { List } from 'react-native-elements'
 import { ListItem } from 'react-native-elements'
 import { Button } from 'react-native-elements'
+import { CheckBox } from 'react-native-elements'
+import {Grid, Col} from 'react-native-elements'
+
+
 
 export default class App extends React.Component {
   render() {
@@ -22,7 +26,7 @@ const list = [
   }, {
     title : 'title3'
     , contents : 'contents '
-    , checked : false
+    , checked : true
   }, {
     title : 'title4'
     , contents : 'contents '
@@ -30,11 +34,11 @@ const list = [
   }, {
     title : 'title5'
     , contents : 'contents '
-    , checked : false
+    , checked : true
   }, {
     title : 'title6'
     , contents : 'contents '
-    , checked : false
+    , checked : true
   }, {
     title : 'title7'
     , contents : 'contents '
@@ -80,6 +84,16 @@ const list = [
                   key={i}
                   title={l.title}
                   onPress={()=>alert(l.title)}
+                  subtitle={
+                    <Grid>
+                      <Col size={20}>
+                        <CheckBox checked={l.checked} style={{width:50}}/>
+                      </Col>
+                      <Col size={80}>
+                        <Text>{l.contents}</Text>
+                      </Col>
+                    </Grid>
+                  }
                 />
               ))
             }
